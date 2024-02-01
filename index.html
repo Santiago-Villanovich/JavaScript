@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CursoFront</title>
+</head>
+<body onload="loadpage()">
+    <h1 id="titulo-land">Titulo de la land</h1>
+    <p id="descripcion-1">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+        Quam omnis quibusdam, eius fugit culpa veritatis! Ea, animi 
+        delectus dolorum expedita recusandae reprehenderit similique 
+        quaerat esse accusantium quae consequatur! Est, fuga.
+    </p>
+    <p id="descripcion-2">
+        <b>ipsum dolor sit amet, consectetur adipisicing elit. Maxime illo nesciunt doloribus esse adipisci, repudiandae, quos laboriosam quidem eligendi cum, dolore assumenda veniam deserunt incidunt quam modi dolorum autem ea.</b> 
+    </p>
+    <p>Seleccione <span id="aqui" onmouseover="cambiarColor(this,'red')" onclick="cambiarBack()">aqui</span> para cambiar el fondo de color</p>
+
+    <script>
+        loadpage = function(){
+            let cookies = navigator.cookieEnabled
+            alert("esta entrando a la pagina. Las cookies estan:" + cookies)
+        }
+
+        function getRandomNumber() {
+        return Math.floor(Math.random() * 256);
+        }
+
+        function getRandomColor() {
+            const red = getRandomNumber();
+            const green = getRandomNumber();
+            const blue = getRandomNumber();
+            return `rgb(${red}, ${green}, ${blue})`;
+        }
+
+        function cambiarColor(elemento,color){
+            elemento.style.color = color
+            console.log("over")
+        }
+        document.getElementById('aqui').addEventListener('mouseleave', () => cambiarColor(this, 'black'));
+
+        function cambiarBack(){
+            document.body.style.backgroundColor = getRandomColor()
+        }
+
+        let titulo = document.getElementById('titulo-land')
+        console.log('el titulo es: ' + titulo.innerHTML)
+        let parrafos = document.getElementsByTagName('p')
+        console.log( 'P count: '+parrafos.length)
+    </script>
+</body>
+</html>
