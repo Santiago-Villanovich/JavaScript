@@ -5,11 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDoList</title>
     <link rel="stylesheet" href="Estilos/estilos.css">
+    <script src="js/entity.js"></script>
     <script src="js/app.js"></script>
 </head>
-<body>
-    <div class="contenedor" id="header">
-        <h1>titulo</h1>
+<body onload="mostrarTareas()">
+    <div class="contenedor centrado" id="header">
+        <h1>My ToDoList</h1>
+    </div>
+    <div id="tareas" class="contenedor ColumnaIzquierda">
+        <!-- <label for="check1">
+            <input id="check1" type="checkbox"> mi tarea
+        </label> -->
+    </div>
+    <div class="contenedor" style="padding-bottom: 5px;">
+        <form id="formu">
+            <input type="text" id="nombre" placeholder="Tarea">
+            <input type="text" id="descripcion" placeholder="Descripcion">
+        </form>
+        <div style="text-align: center;">
+            <button style="cursor: pointer;" onclick="agregarTarea()">+</button>
+        </div>
     </div>
 </body>
 </html>
